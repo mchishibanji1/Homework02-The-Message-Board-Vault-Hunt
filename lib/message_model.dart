@@ -5,9 +5,9 @@ class Message {
   final String text;
   final String authorUid;
   final String authorName;
-  final DateTime?
-  createdAt; // Nullable because it might be pending server write
+  final DateTime? createdAt;
   final DateTime? editedAt;
+  final int schemaVersion; // <-- Added for Spice #5
 
   Message({
     required this.id,
@@ -16,6 +16,7 @@ class Message {
     required this.authorName,
     this.createdAt,
     this.editedAt,
+    this.schemaVersion = 1, // Defaults to 1
   });
 
   factory Message.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
@@ -25,9 +26,9 @@ class Message {
       text: data['text'] ?? '',
       authorUid: data['authorUid'] ?? '',
       authorName: data['authorName'] ?? 'Unknown',
-      // Server timestamps can be null for a split second while being written
       createdAt: (data['createdAt'] as Timestamp?)?.toDate(),
       editedAt: (data['editedAt'] as Timestamp?)?.toDate(),
+      schemaVersion: data['schemaVersion'] ?? 1,
     );
   }
 }
