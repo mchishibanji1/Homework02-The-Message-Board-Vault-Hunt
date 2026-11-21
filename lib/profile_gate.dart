@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_service.dart';
+import 'board_screen.dart';
 
 class ProfileGate extends StatefulWidget {
   const ProfileGate({super.key, required this.user, required this.auth});
@@ -98,9 +99,10 @@ class _ProfileGateState extends State<ProfileGate> {
           );
         }
 
-        return Scaffold(
-          appBar: AppBar(title: const Text('Message Board')),
-          body: const Center(child: Text('Board implementation comes next.')),
+        return BoardScreen(
+          key: ValueKey(widget.user.uid),
+          user: widget.user,
+          auth: widget.auth,
         );
       },
     );
