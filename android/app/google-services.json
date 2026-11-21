@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "572593402045",
+    "project_id": "message-board-vault-49e4c",
+    "storage_bucket": "message-board-vault-49e4c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572593402045:android:d98eb199a0fc9d9eb707d4",
+        "android_client_info": {
+          "package_name": "com.example.homework_02_message_board_vault_hunt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiklGpnIetzH6x0nfpdBHOG7_6VbYAXD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
